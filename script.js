@@ -1,3 +1,8 @@
+function toggleMenu() {
+    const nav = document.querySelector('.main-nav');
+    nav.classList.toggle('active');
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     var mySwiper = new Swiper(".swiper-container", {
         loop: true,
@@ -18,57 +23,48 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 
-    // Adiciona um ouvinte de eventos para os botões "Mais detalhes"
-    document.querySelectorAll('.card img').forEach(function (button) {
-        button.addEventListener('click', function () {
+    document.querySelectorAll('.card img').forEach(function (img) {
+        img.addEventListener('click', function () {
             toggleDetails(this);
         });
     });
 
-    // Função para mostrar/esconder detalhes do depoimento
-    function toggleDetails(button) {
-        var card = button.closest('.card');
+    function toggleDetails(img) {
+        var card = img.closest('.card');
         var partialComment = card.querySelector('.partial-comment');
         var fullComment = card.querySelector('.full-comment');
+        var plusIcon = card.querySelector('img[alt="Sinal de mais para ampliar os comentários"]');
+        var minusIcon = card.querySelector('img[alt="Sinal de menos para fechar os comentários"]');
 
-        if (partialComment.style.display === 'none' || partialComment.style.display === '') {
-            // Mostra o comentário parcial e oculta o completo
-            partialComment.style.display = 'block';
-            fullComment.style.display = 'none';
-            // Reinicia o carrossel
-            mySwiper.autoplay.start();
-        } else {
+        // Verifica se o comentário completo está visível
+        if (fullComment.style.display === 'none' || fullComment.style.display === '') {
             // Mostra o comentário completo e oculta o parcial
             partialComment.style.display = 'none';
             fullComment.style.display = 'block';
-            // Pausa o carrossel
-            mySwiper.autoplay.stop();
+            plusIcon.style.display = 'none';
+            minusIcon.style.display = 'block';
+            mySwiper.autoplay.stop(); // Pausa o carrossel
+        } else {
+            // Mostra o comentário parcial e oculta o completo
+            partialComment.style.display = 'block';
+            fullComment.style.display = 'none';
+            plusIcon.style.display = 'block';
+            minusIcon.style.display = 'none';
+            mySwiper.autoplay.start(); // Reinicia o carrossel
         }
     }
-
-    // Esconde os comentários completos inicialmente
-    document.querySelectorAll('.full-comment').forEach(function(comment) {
-        comment.style.display = 'none';
-    });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Busca o botão pelo texto, assumindo que é único na página.
-    var faleConoscoButton = document.querySelector('button:contains("Fale conosco")');
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona o botão pelo ID
+    var contactButton = document.getElementById('contactButton');
 
-    // Adiciona um event listener ao botão, se encontrado
-    if (faleConoscoButton) {
-        faleConoscoButton.addEventListener('click', function() {
-            // Busca o elemento pelo ID
-            var headerElement = document.getElementById('ondeestamos');
-            
-            // Usa scrollIntoView para mover para o elemento
-            if (headerElement) {
-                headerElement.scrollIntoView({
-                    behavior: 'smooth', // Define a animação de rolagem como suave
-                    block: 'start' // Alinha o elemento ao topo da página
-                });
-            }
+    // Adiciona um ouvinte de eventos ao botão
+    contactButton.addEventListener('click', function() {
+        // Rola para o topo da página suavemente
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
-    }
+    });
 });

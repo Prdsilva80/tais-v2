@@ -27,6 +27,63 @@ nav a {
     font-size: 1rem;
 }
 
+/* Estilos base para desktop */
+.menu-hamburguer {
+    display: none; 
+}
+
+nav.main-nav {
+    display: flex;
+    justify-content: right; 
+    align-items: center; 
+}
+
+nav.main-nav a {
+    text-decoration: none; 
+    color: #333;
+    padding: 0 15px;
+}
+
+/* Media Query para telas menores (dispositivos móveis) */
+@media (max-width: 768px) {
+    .menu-hamburguer {
+        display: block; 
+        cursor: pointer;
+        position: fixed; 
+        top: 0;
+        right: 0; 
+        z-index: 999; 
+        padding: 15px;
+    }
+
+    nav.main-nav {
+        display: none;
+        position: fixed;
+        top: 67px;
+        right: 0;
+        width: 160px;
+        background: #ffffff;
+        box-shadow: -2px 0 5px rgba(0,0,0,.5);
+        z-index: 998;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 50px;
+        align-items: flex-end;
+    }
+
+    nav.main-nav.active {
+        display: flex;
+    }
+
+    nav.main-nav a {
+        display: block;
+        text-decoration: none;
+        padding: 10px 20px;
+        color: #333; 
+        border-bottom: 1px solid #eee;
+    }
+}
+
 .hero {
     position: relative;
     height: 100vh;
@@ -267,15 +324,15 @@ nav a {
 }
 
 .depoimentos h1 {
-    font-family: Open-sans 'sans-serif';
+    font-family: Open-sans, sans-serif;
     font-size: 2.2rem;
     text-align: center;
-    margin: 3rem 0 3rem 0;
+    margin: 3rem 0;
 }
 
 .card {
     width: 45.5rem;
-    height: 12.3rem;
+    height: 12.3rem; /* Inicialmente, ajuste conforme necessário para acomodar o comentário parcial */
     border-radius: 6px;
     background-color: #456D3E;
     margin: 1.25rem auto;
@@ -287,19 +344,19 @@ nav a {
 }
 
 .card h2 {
-    margin-bottom: 10px;
     color: white;
+    margin-bottom: 10px;
 }
 
 .card p {
     font-size: 1rem;
     color: white;
     margin-bottom: 10px;
-    max-height: 5rem;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    /* Removendo propriedades específicas para garantir a visibilidade completa */
+}
+
+.full-comment, img[alt="Sinal de menos para fechar os comentários"] {
+    display: none; /* Ocultar inicialmente o comentário completo e ícone de menos */
 }
 
 .card img {
@@ -307,7 +364,7 @@ nav a {
     transition: transform 0.3s ease-in-out;
     position: absolute;
     bottom: 1rem;
-    lef: 1rem; 
+    left: 1rem;
 }
 
 .card:hover img {
@@ -350,7 +407,7 @@ nav a {
     overflow: hidden;
 }
 
-button {
+#contactButton {
     width: 145px;
     height: 45px;
     border: none;

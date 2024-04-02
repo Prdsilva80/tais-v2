@@ -15,7 +15,10 @@
 <body>
     <header>
         <img class="logo" src="./assets/logo - img.svg" alt="Logo do espaço Taís Silva">
-        <nav>
+        <div class="menu-hamburguer" onclick="toggleMenu()">
+            <img src="./assets/mobile-menu.svg" alt="Menu">
+        </div>
+        <nav class="main-nav">
             <a href="#">Início</a>
             <a href="#sobre">Sobre</a>
             <a href="#servicos">Serviços</a>
@@ -121,6 +124,7 @@
                     <p class="full-comment"><i>"A auriculoterapia me ajudou muito com as dores de enxaqueca, mesmo após o término do tratamento é raro
                         sentir dor de cabeça... A Taís é uma excelente profissional, ótimo atendimento."</i></p> 
                     <img src="./assets/plus.svg" alt="Sinal de mais para ampliar os comentários">
+                    <img src="./assets/minus.svg" alt="Sinal de menos para fechar os comentários">
                 </div>
             </div>
             <div class="swiper-slide">
@@ -134,6 +138,7 @@
                         sem esperanças e desesperada já,
                         mas busquei a ajuda da Taís e com a auriculoterapia estou desde a primeira sessão sem dor..."</i></p>
                     <img src="./assets/plus.svg" alt="Sinal de mais para ampliar os comentários">
+                    <img src="./assets/minus.svg" alt="Sinal de menos para fechar os comentários">
                 </div>
             </div>
             <div class="swiper-slide">
@@ -148,6 +153,7 @@
                         Também fiz massagem facial, que foi sensacional para aquietar a mente.
                         Senti que consegui relaxar muito e foi revigorante. Recomendo os tratamentos que ela faz!"</i></p>
                     <img src="./assets/plus.svg" alt="Sinal de mais para ampliar os comentários">
+                    <img src="./assets/minus.svg" alt="Sinal de menos para fechar os comentários">
                 </div>
             </div>
             <div class="swiper-slide">
@@ -159,6 +165,7 @@
                         Fiz auriculoterapia e comecei com a barra de access! 
                         A Taís é uma excelente profissional que tem me ajudado muito tanto em aspectos físicos quanto emocionais!"</i></p>
                     <img src="./assets/plus.svg" alt="Sinal de mais para ampliar os comentários">
+                    <img src="./assets/minus.svg" alt="Sinal de menos para fechar os comentários">
                 </div>
             </div>
             <div class="swiper-slide">
@@ -170,6 +177,7 @@
                         Me senti muito bem, desde o primeiro momento, pretendo seguir com o tratamento.  
                         Super indico."</i></p>
                     <img src="./assets/plus.svg" alt="Sinal de mais para ampliar os comentários">
+                    <img src="./assets/minus.svg" alt="Sinal de menos para fechar os comentários">
                 </div>
             </div>
             <div class="swiper-slide">
@@ -182,6 +190,7 @@
                         em uma semana as mudanças são visíveis e gratificantes.
                         Com certeza está fazendo muita diferença na saúde da minha família!🙏🏻🤗"</i></p>
                     <img src="./assets/plus.svg" alt="Sinal de mais para ampliar os comentários">
+                    <img src="./assets/minus.svg" alt="Sinal de menos para fechar os comentários">
                 </div>
             </div>
         </div>
@@ -194,7 +203,8 @@
         <img src="./assets/local.svg" alt="Simbolo de localização">
         <p class="localization">Rua Major Antônio de Oliveira Fontão, 358 - Centro, Vargem Grande do Sul - SP<br>
             Clínica Là Vitta, Poços de Caldas - MG.</p>
-            <button>Fale conosco</button>
+            <button id="contactButton">Fale conosco</button>
+
     </div>
     <div class="map-container">
         <!-- Mapa incorporado do Google Maps -->
