@@ -1,0 +1,389 @@
+body {
+    font-family: 'Open-sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Estilos para telas maiores */
+header {
+    background-color: #F7F7F7;
+    padding: 0.625rem 1.25rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #ddd;
+}
+
+nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #27272B;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('./assets/rectangle.svg') center/cover;
+    display: flex;
+    margin-top: 4rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.hero-content {
+    text-align: left;
+    color: #fff;
+    z-index: 1;
+    max-width: 37.5rem;
+    padding: 1.25rem;
+    margin: auto;
+}
+
+.hero h1,
+.hero p,
+.neon-bt {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    animation: appearFromLeft 2s ease-out forwards;
+}
+
+@keyframes appearFromLeft {
+    from {
+        margin-left: -80rem;
+        opacity: 0;
+    }
+    to {
+        margin-left: 1;
+        opacity: 1;
+    }
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+.neon-bt {
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.7rem 2rem;
+    background: #456D3E;
+    color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: 0.2s;
+    margin-top: 1rem;
+}
+
+.neon-bt img {
+    margin-right: 0.5rem;
+    vertical-align: -2px;
+}
+
+.hero h1,
+.hero p,
+.neon-bt {
+    margin-left: -40rem;
+}
+
+.neon-bt:hover {
+    background: #45803b;
+    color: white;
+    border-radius: 5px;
+}
+
+/*animação do span para criar linhas*/
+
+.neon-bt span {
+    position: absolute;
+    display: block;
+}
+
+/* span 1 */
+.neon-bt span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #46C330);
+    animation: btn-anim1 4s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+/* span 2 */
+.neon-bt span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #46C330);
+    animation: btn-anim2 4s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%, 100% {
+        top: 100%;
+    }
+}
+
+/* span 3 */
+.neon-bt span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(270deg, transparent, #46C330);
+    animation: btn-anim3 4s linear infinite;
+    animation-delay: 2s;
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%, 100% {
+        right: 100%;
+    }
+}
+
+/* span 4 */
+.neon-bt span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #46C330);
+    animation: btn-anim4 4s linear infinite;
+    animation-delay: 3s;
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%, 100% {
+        bottom: 100%;
+    }
+}
+
+/* Adicione estilos para a seção SOBRE */
+#sobre {
+    background-color: #FFFFFF;
+    padding: 8rem;
+}
+
+#sobre h1 {
+    font-family: Open-sans 'sans-serif';
+    font-weight: 700;
+    font-size: 2em;
+    margin-left: -1rem;
+    margin-bottom: -2rem;
+}
+
+.sobre-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: -1rem;
+    margin-right: 5rem;
+}
+
+.sobre-content p {
+    font-family: Open-sans 'sans-serif';
+    font-weight: 400;
+    max-width: 37.5rem;
+}
+
+/* Estilos para a Seção SERVIÇOS */
+#servicos {
+    text-align: center;
+    padding: 3.125rem 0;
+    background-color: #EAF0ED;
+}
+
+#servicos h1 {
+    font-size: 2.25rem;
+    margin-bottom: 5rem;
+    color: #000000;
+}
+
+.servicos-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.servico-card {
+    width: 22rem;
+    height: 15rem;
+    border-radius: 8px;
+    background-color: white;
+    margin: 1.2rem;
+    padding: 1.2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.servico-card img {
+    width: 5rem;
+    height: 5rem;
+    margin-right: 1.2rem;
+}
+
+.servico-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.servico-card p {
+    font-size: 1rem;
+    color: #27272B;
+}
+
+.depoimentos {
+    padding: 100px;
+}
+
+.depoimentos h1 {
+    font-family: Open-sans 'sans-serif';
+    font-size: 2.2rem;
+    text-align: center;
+    margin: 3rem 0 3rem 0;
+}
+
+.card {
+    width: 45.5rem;
+    height: 12.3rem;
+    border-radius: 6px;
+    background-color: #456D3E;
+    margin: 1.25rem auto;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+    position: relative;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.card p {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 10px;
+    max-height: 5rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.card img {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    position: absolute;
+    bottom: 1rem;
+    lef: 1rem; 
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Estilos para a seção ONDE ESTAMOS */
+#ondeestamos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3.125rem;
+    padding: 6.25rem 1.25rem 3.125rem;
+    background-color: #EAF0ED;
+}
+
+/* Estilos para o título da localização */
+#ondeestamos h1 {
+    font-family: Open-sans 'sans-serif';
+    font-size: 2.2rem;
+    word-break: break-all;
+}
+
+#ondeestamos p {
+    font-family: Open-sans 'sans-serif';
+    font-size: 1.1rem;
+}
+
+#ondeestamos .location-info {
+    max-width: 50rem;
+}
+
+#ondeestamos img {
+    margin-bottom: 1.25rem;
+}
+
+#ondeestamos .map-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+button {
+    width: 145px;
+    height: 45px;
+    border: none;
+    border-radius: 4px;
+    background-color: #CCCCCC;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilos para o footer */
+footer {
+    background-color: white;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+/* Estilos para o conteúdo do footer */
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para o texto do footer */
+.footer-content p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Estilos para o ícone do Instagram */
+.footer-content img {
+    width: 1.8rem;
+    height: auto;
+    margin-left: 0.9rem;
+}
